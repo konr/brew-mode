@@ -1,2 +1,24 @@
 * brewgenie
-Mead brewing assistant
+
+An emacs-based brewing assistant.
+
+* Vision
+
+I want to have a folder with my brewing batches, each in a file. 
+
+I want to be able to write the recipe, make additions along the way and get
+intelligent predictions on how the recipe will turn out to be, both
+quantitatively (ABV, pH etc) and qualitatively (bitterness, taste profile)
+
+I want to be able to write logs and comment on what happened.
+
+I want to support lots of different beverages, like mead, beer, sake, kombucha,
+kefir, etc.
+
+I want to generate schedules of things to do, like staggered-nutrient addition,
+dry-hopping, harvesting kombucha etc.
+
+I want to understand ingredients, like the profile of the many hops available.
+
+I want to reason about the whole of my recipes and get suggestions of what to do
+next.
