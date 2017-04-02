@@ -1,2 +1,2 @@
-# brewgenie
+* brewgenie
 Mead brewing assistant
