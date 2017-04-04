@@ -23,6 +23,7 @@
 
 ;;; Code:
 
+
 (defun brew/brix<->gravity-test ()
   (let ((tests '((15.0 1.0611)
                  (20.0 1.0830)
@@ -38,5 +39,4 @@
                  (1.15 23.0))))
     (loop for test in tests
           doing (assert (= (round-float (brew/gravity->potential-abv (car test)) 1) (cadr test))))))
-
 ;;; brew-mode-test.el ends here

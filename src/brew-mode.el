@@ -23,11 +23,39 @@
 
 ;;; Code:
 
+;; Utils
+
+(defmacro ->> (&rest body)
+  (let ((result (pop body)))
+    (dolist (form body result)
+      (setq result (append form (list result))))))
+
+(defmacro -> (&rest body)
+  (let ((result (pop body)))
+    (dolist (form body result)
+      (setq result (append (list (car form) result)
+                           (cdr form))))))
+
+
+;; Formulae
+;; https://www.brewtoad.com/tools/alcohol-calculator
+
 (defun brew/brix->gravity (brix)
-  (1+ (/ brix (- 258.6 (* (/ brix 258.2) 227.1)))))
+  (->>
+   (/ brix 258.2)
+   (* 227.1)
+   (- 258.6 )
+   (/ brix )
+   (1+)))
 
 (defun brew/gravity->brix (gravity)
-  (- (* (+ (* (- (* 182.4601 gravity) 775.6821) gravity) 1262.7794) gravity) 669.5622))
+  (->
+   (* 182.4601 gravity)
+   (- 775.6821)
+   (* gravity)
+   (+ 1262.7794)
+   (* gravity)
+   (- 669.5622)))
 
 (defun brew/gravity->potential-abv (gravity)
   (* 76.08
