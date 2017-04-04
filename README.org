@@ -1,4 +1,4 @@
-* brewgenie
+* brew-mode
 
 An emacs-based brewing assistant.
 
