@@ -39,4 +39,13 @@
                  (1.15 23.0))))
     (loop for test in tests
           doing (assert (= (round-float (brew/gravity->potential-abv (car test)) 1) (cadr test))))))
+
+(defun brew/needed-pressure-for-test ()
+  (let ((tests '((2.0 2.0 0.35)
+                 (4.0 2.0 1.76)
+                 (1.0 20.0 0.28))))
+    (loop for test in tests
+          doing (assert (= (round-float (brew/needed-pressure-for (nth 0 test) (nth 1 test)) 2) (nth 2 test))))))
+
+
 ;;; brew-mode-test.el ends here
